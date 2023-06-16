@@ -1,0 +1,172 @@
+@import url(https://www.googleapis.com/webfonts/v1/webfonts?family=iceland);
+
+
+:root{
+    --grey: #F6F6F6;
+    --purpple: #C44EED;
+    --blue: #2C7AA6;
+    --yellow: #E1CE1E;
+    --black: #262626;
+    --allblack: #000000;
+    --darkGrey: #414141;
+    --keyApi: "AIzaSyBSktgf1Tr2t_TF91nyjDePeTdWm3yqtJU";
+}
+
+*{
+    color: var(--grey);
+
+    /* font-family: 'iceland', sans-serif */
+}
+
+.header__{
+    background-color: var(--purpple);
+    height: 55px;
+    box-shadow: 10px 5px 5px var(--black);
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+
+}
+
+.header__nav, .header__nav div, .header__nav a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: var(--grey);
+}
+
+.main__{
+    background-color: var(--black);
+
+}
+
+.container__{
+    padding: 30px;
+}
+
+.container__cards{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 35px;    
+
+}
+
+.material-icons{
+    
+    font-size: 80px;
+    text-align: center;
+}
+
+.container__card{
+    background-color: var(--blue);
+    height: 180px;
+    width: 300px;
+    border-radius: 4px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.container__cards a{
+    text-decoration: none;
+}
+
+#color__purple{
+    background-color: var(--purpple);
+
+}
+
+.nav__categorias{
+    display: flex;
+    margin: 30px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.categoria__eventos{
+    background-color: var(--blue);
+    text-decoration: none;
+    display: grid;
+    justify-items: center;
+    width: 100%;
+}
+
+.categoria__pesquisa{
+    display: flex;
+    margin: 30px;
+    justify-content: space-between;
+}
+
+.categoria__pesquisa input{
+    border-radius: 4px;
+    background-color: var(--darkGrey);
+    border: var(--black);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* imagens----------------------------------------------------- */
+.img__icon{
+    height: 40px;
+    width: 40px;
+}
+
+.img__perfil img{
+    height: 30px;
+    width: 30px;
+}
+
+.img__perfil{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    border-radius: 50%;
+    border: 1px solid var(--black);
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black);
+    margin-left: 20px;
+}
+
+.carrosel__imagens img{
+    height: 450px;
+
+}
+
+
+/* Footer----------------------------------------------------- */
+
+
+.footer__{
+    background-color: var(--allblack);
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    align-content: space-between;
+}
+.footer__ span{
+    display: grid;
+    justify-items: center;
+    align-items: baseline;
+}
+
+.footer__ div{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
