@@ -1,196 +1,153 @@
-@import url(https://www.googleapis.com/webfonts/v1/webfonts?family=iceland);
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 
-
-:root{
-    --grey: #F6F6F6;
+:root {
+    /* colors */
+    --white: #F6F6F6;
     --purpple: #C44EED;
     --blue: #2C7AA6;
     --yellow: #E1CE1E;
     --black: #262626;
-    --allblack: #000000;
-    --darkGrey: #414141;
+    --all-black: #000000;
+    --dark-grey: #414141;
     --keyApi: "AIzaSyBSktgf1Tr2t_TF91nyjDePeTdWm3yqtJU";
+
+    /* fonts */
+    --iceland: 'Iceland', cursive;
+    --arimo: 'Arimo', sans-serif;
 }
 
-*{
-    color: var(--grey);
-
-    /* font-family: 'iceland', sans-serif */
+* {
+    color: var(--white);
+    font-family: var(--arimo);
 }
 
-.header__{
+/* Header----------------------------------------------------- */
+
+.header {
     background-color: var(--purpple);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     height: 55px;
-    box-shadow: 10px 5px 5px var(--black);
     padding-left: 20px;
     padding-right: 20px;
     text-decoration: none;
-
 }
 
-.header__nav, .header__nav div, .header__nav a{
+.header__nav, .header__nav div, .header__nav a {
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-decoration: none;
-    color: var(--grey);
+    color: var(--white);
 }
 
+.header__nav h1 {
+    font-size: 40px;
+    font-family: var(--iceland);
+}
 
 /* main----------------------------------------------------- */
-.main__{
+
+.main {
     background-color: var(--black);
-
+    width: 100%;
 }
 
-.container__{
-    padding: 30px;
+/* Home----------------------------------------------------- */
+
+.container {
+    max-width: 100vw !important;
+    padding: 50px;
 }
 
-.container__cards{
+.container__cards {
     display: flex;
     justify-content: space-around;
-    margin-top: 35px;    
-
 }
 
-.material-icons{
-    
-    font-size: 80px;
+.container__cards a {
+    text-decoration: none;
+}
+
+.material-icons {
+    font-size: 500px;
     text-align: center;
 }
 
-.container__card{
+.container__card {
     background-color: var(--blue);
     height: 180px;
     width: 300px;
     border-radius: 4px;
-    display: grid;
+    display: flex;
     justify-content: center;
-    align-items: center;
-}
-.container__cards a{
-    text-decoration: none;
+    flex-wrap: wrap;
+    padding: 100px;
+    align-content: center;
+    transition: .3s;
 }
 
-#color__purple{
+.container__card h3 {
+    margin: 1rem;
+}
+
+.container__card:hover {
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.575);
+    background-color: #26668b;
+}
+
+#color__purple {
     background-color: var(--purpple);
-
 }
 
-.nav__categorias{
+#color__purple:hover {
+    background-color: #a842ca;
+}
+
+.nav__categorias {
     display: flex;
     margin: 30px;
     align-items: center;
     justify-content: space-around;
 }
 
-.categoria__eventos{
+.categoria__eventos {
     background-color: var(--blue);
     text-decoration: none;
-    display: grid;
-    justify-items: center;
     width: 100%;
+    transition: .3s;
 }
 
-.categoria__pesquisa{
+.categoria__eventos p {
+    margin: .5rem;
+    text-align: center;
+}
+
+.categoria__eventos:hover {
+    background-color: #26668b;
+}
+
+.categoria__pesquisa {
     display: flex;
     margin: 30px;
     justify-content: space-between;
 }
 
-.categoria__pesquisa input{
+.categoria__pesquisa input {
     border-radius: 4px;
-    background-color: var(--darkGrey);
     border: var(--black);
 }
 
-.main__formulario{
-    display: flex;
-    justify-content: center;
-
-}
-
-.formulario__{
-    border-radius: 5px;
-    margin: 25px;
-    background-color: var(--darkGrey);
-    width: 1000px;
-    height: 780px;
-}
-
-.formulario__ h3{
-    margin: 25px;
-}
-
-.formulario__ form{
-    display: flex;
-    justify-content:space-evenly;
-}
-
-.formulario__ div{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-
-
-}
-#linha__dupla{
-    margin-left: 10px;
-}
-
-.formulario__ input{
-    width: 450px;
-    height: 45px;
-    padding-left: 10px;
-    background-color: var(--black);
-    border-radius: 4px;
-    margin-top: 10px;
-}
-
-.formulario__input{
-    margin: 5px;
-}
-
-
-.formulario__linha{
-    display: flex;
-}
-
-.formulario__linha a, .formulario__ h3{
-    text-decoration: none;
-    color: var(--purpple);
-}
-
-#formulario__buttons{
-    display: flex;
-    align-items: center;
-}
-
-.formulario__linha button, input[type=submit]{
-    background-color: var(--darkGrey);
-    width: 130px;
-    height: 35px;
-    border-radius: 4px;
-}
-
-input[type=submit]{
-    background-color: var(--purpple);
-}
-
-#formulario__linha__dupla{
-    width: 220px;
-}
-
-
-
-
-
-
 /* imagens----------------------------------------------------- */
-.img__icon{
+.img__ticket{
     height: 40px;
     width: 40px;
+    transition: .3s;
+}
+
+.img__ticket:hover {
+    height: 45px;
+    width: 45px;
 }
 
 .img__perfil img{
@@ -215,31 +172,108 @@ input[type=submit]{
 
 }
 
+/* Form----------------------------------------------------- */
+
+.main__formulario{
+    display: flex;
+    justify-content: center;
+}
+
+.formulario__ {
+    border-radius: 5px;
+    margin: 25px;
+    background-color: var(--darkGrey);
+    width: 1000px;
+    height: 780px;
+}
+
+.formulario__ h3 {
+    margin: 25px;
+}
+
+.formulario__ form {
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.formulario__ div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#linha__dupla {
+    margin-left: 10px;
+}
+
+.formulario__ input {
+    width: 450px;
+    height: 45px;
+    padding-left: 10px;
+    background-color: var(--black);
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.formulario__input {
+    margin: 5px;
+}
+
+
+.formulario__linha {
+    display: flex;
+}
+
+.formulario__linha a, .formulario__ h3 {
+    text-decoration: none;
+    color: var(--purpple);
+}
+
+#formulario__buttons {
+    display: flex;
+    align-items: center;
+}
+
+.formulario__linha button, input[type=submit] {
+    background-color: var(--darkGrey);
+    width: 130px;
+    height: 35px;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+    background-color: var(--purpple);
+}
+
+#formulario__linha__dupla {
+    width: 220px;
+}
 
 /* Footer----------------------------------------------------- */
 
-
-.footer__{
-    background-color: var(--allblack);
+.footer {
+    background-color: var(--all-black);
     bottom: 0;
     width: 100%;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     align-content: space-between;
 }
-.footer__ span{
+
+.footer span {
+    font-size: 18px;
     display: grid;
     justify-items: center;
     align-items: baseline;
 }
 
-.footer__ div{
+.footer div {
     display: flex;
     justify-content: space-between;
 }
 
-
-
-
-
-
+.social__icon {
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+}
