@@ -36,6 +36,8 @@
     color: var(--grey);
 }
 
+
+/* main----------------------------------------------------- */
 .main__{
     background-color: var(--black);
 
@@ -103,11 +105,82 @@
     border: var(--black);
 }
 
+.main__formulario{
+    display: flex;
+    justify-content: center;
+
+}
+
+.formulario__{
+    border-radius: 5px;
+    margin: 25px;
+    background-color: var(--darkGrey);
+    width: 1000px;
+    height: 780px;
+}
+
+.formulario__ h3{
+    margin: 25px;
+}
+
+.formulario__ form{
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.formulario__ div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
 
 
+}
+#linha__dupla{
+    margin-left: 10px;
+}
+
+.formulario__ input{
+    width: 450px;
+    height: 45px;
+    padding-left: 10px;
+    background-color: var(--black);
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.formulario__input{
+    margin: 5px;
+}
 
 
+.formulario__linha{
+    display: flex;
+}
 
+.formulario__linha a, .formulario__ h3{
+    text-decoration: none;
+    color: var(--purpple);
+}
+
+#formulario__buttons{
+    display: flex;
+    align-items: center;
+}
+
+.formulario__linha button, input[type=submit]{
+    background-color: var(--darkGrey);
+    width: 130px;
+    height: 35px;
+    border-radius: 4px;
+}
+
+input[type=submit]{
+    background-color: var(--purpple);
+}
+
+#formulario__linha__dupla{
+    width: 220px;
+}
 
 
 

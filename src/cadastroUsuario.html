@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>+Events | Cadastro</title>
+</head>
+
+<body>
+    <header class="header__">
+        <nav class="header__nav">
+
+            <div>
+                <a href="index.html">
+                    <h1>+EVENTS</h1>
+                </a>
+            </div>
+            <div>
+                <a href="################"><img class="img__icon" src="../img/sacola.png" alt=""></a>
+                <a href="###################">
+                    <span class="img__perfil">
+                        <img src="../img/perfil-f.png" alt="">
+                    </span>
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="main__">
+
+        <article class="main__formulario">
+            <section>
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+            </section>
+
+            <section class="formulario__">
+                
+                <h3>Preencha os campos abaixo</h3>
+
+                <form action="" method="post">
+
+                    <span>
+                        <div class="formulario__linha">
+                            <span class="formulario__input">
+                                <label for="nome">Nome</label><br>
+                                <input type="text" name="nome" required><br>
+                            </span>
+
+                            <span class="formulario__input" style="display: flex;">
+                                <span>
+                                    <label for="data_nascimento">Data de Nascimento</label><br>
+                                    <input type="date" id="formulario__linha__dupla" required><br>
+                                </span>
+
+                                <span id="linha__dupla">
+                                    <label for="cpf">CPF</label><br>
+                                    <input type="number" name="cpf" id="formulario__linha__dupla" required><br>
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="formulario__linha">
+                            <span class="formulario__input">
+                                <label for="contato">Contato</label><br>
+                                <input type="tel" name="contato" required><br>
+                            </span>
+
+                            <span class="formulario__input">
+                                <label for="cep">CEP</label><br>
+                                <input name="cep" id="cep" required><br>
+                                <div id="erro"></div>
+                            </span>
+                        </div>
+
+                        <div class="formulario__linha">
+                            <span class="formulario__input">
+                                <label for="estado">Estado</label><br>
+                                <input name="estado" id="estado" required><br>
+                            </span>
+
+                            <span class="formulario__input">
+                                <label for="cidade">Cidade</label><br>
+                                <input name="cidade" id="cidade" required><br>
+                            </span>
+                        </div>
+
+                        <div class="formulario__linha">
+                            <span class="formulario__input">
+                                <label for="endereco">Endereço</label><br>
+                                <input name="endereco" id="endereco" required><br>
+                            </span>
+
+                            <span class="formulario__input">
+                                <label for="bairro">Bairro</label><br>
+                                <input name="bairro" id="bairro" required><br>
+                            </span>
+                        </div>
+
+                        <div class="formulario__linha">
+                            <span class="formulario__input">
+                                <label for="numero">Número</label><br>
+                                <input type="number" name="numero" required><br>
+                            </span>
+
+                            <span class="formulario__input">
+                                <label for="complemento">Complemento</label><br>
+                                <input type="text" name="complemento" required><br>
+                            </span>
+                        </div>
+
+                        <div class="formulario__linha">
+                            <span class="formulario__input">
+                                <label for="email">E-mail</label><br>
+                                <input type="email" name="email" required><br>
+                            </span>
+
+                            <span class="formulario__input">
+                                <label for="senha">Senha</label><br>
+                                <input type="password" name="senha" required><br>
+                            </span>
+                        </div>
+
+                        <div class="formulario__linha" id="formulario__buttons">
+                            <a href="index.html">Já possuo cadastro</a>
+
+                            <span>
+                                <a href="index.html"><button type="button">Cancelar</button></a>
+                                <input type="submit" value="Salvar">
+                            </span>
+                        </div>
+                    </span>
+                </form>
+            </section>
+
+        </article>
+
+    </main>
+
+    <footer class="footer__">
+
+        <div class="header__nav">
+            <a href="index.html">
+                <h1>+EVENTS</h1>
+            </a>
+            <div>
+                <a href=""><img class="img__icon" src="../img/facebook.png" alt=""></a>
+                <a href=""><img class="img__icon" src="../img/googleIcon.png" alt=""></a>
+                <a href=""><img class="img__icon" src="../img/instaIcon.png" alt=""></a>
+                <a href=""><img class="img__icon" src="../img/twittIcon.png" alt=""></a>
+            </div>
+        </div>
+        <span>
+            <p>&copy;Copyright 2023 More Events</p>
+        </span>
+    </footer>
+
+    <script src="javaScript/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="../API/viacepAPI/mainViacep.js"></script>
+</body>
+
+</html>
