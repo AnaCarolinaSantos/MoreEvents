@@ -1,12 +1,14 @@
+// Funcoes sobre listagem e criacao de eventos
+
 async function listaEvento() {
-    const conexao = await fetch("http://localhost:3000/eventos");
+    const conexao = await fetch("http://localhost:3000/evento");
     const conexaoConvertida = await conexao.json();
 
     return conexaoConvertida;
 }
 
 async function criaEvento(titulo, descricao, url, imagem) {
-    const conexao = await fetch("http://localhost:3000/eventos", {
+    const conexao = await fetch("http://localhost:3000/evento", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -29,14 +31,41 @@ async function criaEvento(titulo, descricao, url, imagem) {
 }
 
 async function buscaEvento(termoBusca) {
-    const conexao = await fetch(`http://localhost:3000/videos?q=${termoBusca}`)
+    const conexao = await fetch(`http://localhost:3000/evento?q=${termoBusca}`)
     const conexaoConvertida = conexao.json();
 
     return conexaoConvertida;
 }
 
+//  Funcoes referente ao cadastro de usuario na plataforma 
+
+async function criaCliente(nome, nascimento, cpf, contato, cep, estado, 
+    cidade, endereco, bairro, numero, complemento, email, senha) {
+    
+    const conexao = await fetch("http://localhost:3000/usuario", {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            // titulo: titulo,
+            // descricao: `${descricao} mil visualizações`,
+            // url: url,
+            // imagem: imagem
+        })
+    });
+
+    if(!conexao.ok){
+        throw new Error("Não foi possível realizar cadastro, tente novamnete mais tarde!");
+    }
+
+    const conexaoConvertida = await conexao.json();
+
+    return conexaoConvertida;
+}
+
 export const conectaApi = {
-    listaVideos,
-    criaVideo,
-    buscaVideos
+    listaEvento,
+    criaEvento,
+    buscaEvento
 }
