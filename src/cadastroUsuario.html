@@ -16,7 +16,7 @@
     <header class="header">
         <nav class="header__nav">
             <div>
-                <a href="index.html">
+                <a href="../index.html">
                     <h1>+EVENTS</h1>
                 </a>
             </div>
@@ -32,17 +32,9 @@
     </header>
 
     <main class="main">
+        <h1 class="formulario__titulo">Cadastro</h1>
 
         <article class="main__formulario">
-            <section>
-                <div>
-
-                </div>
-                <div>
-
-                </div>
-            </section>
-
             <section class="formulario__">
                 
                 <h3>Preencha os campos abaixo</h3>
@@ -53,18 +45,18 @@
                         <div class="formulario__linha">
                             <span class="formulario__input">
                                 <label for="nome">Nome</label><br>
-                                <input type="text" name="nome" data-nome required><br>
+                                <input type="text" name="nome" data-nome placeholder="Nome completo" required><br>
                             </span>
 
                             <span class="formulario__input" style="display: flex;">
                                 <span>
-                                    <label for="data_nascimento">Data de Nascimento</label><br>
+                                    <label for="data_nascimento">Data de nascimento</label><br>
                                     <input type="date" id="formulario__linha__dupla" data-nascimento required><br>
                                 </span>
 
                                 <span id="linha__dupla">
                                     <label for="cpf">CPF</label><br>
-                                    <input type="number" name="cpf" id="formulario__linha__dupla" data-cpf required><br>
+                                    <input type="text" name="cpf" id="formulario__linha__dupla" data-cpf placeholder="000.000.000-00" required><br>
                                 </span>
                             </span>
                         </div>
@@ -72,12 +64,12 @@
                         <div class="formulario__linha">
                             <span class="formulario__input">
                                 <label for="contato">Contato</label><br>
-                                <input type="tel" name="contato" data-telefone required><br>
+                                <input type="tel" name="contato" data-telefone placeholder="(00) 00000-0000" required><br>
                             </span>
 
                             <span class="formulario__input">
                                 <label for="cep">CEP</label><br>
-                                <input name="cep" id="cep" data-cep required><br>
+                                <input name="cep" id="cep" data-cep placeholder="00000-000" required>
                                 <div id="erro"></div>
                             </span>
                         </div>
@@ -85,58 +77,57 @@
                         <div class="formulario__linha">
                             <span class="formulario__input">
                                 <label for="estado">Estado</label><br>
-                                <input name="estado" id="estado" data-estado required><br>
+                                <input name="estado" id="estado" data-estado placeholder="Selecione seu estado" required><br>
                             </span>
 
                             <span class="formulario__input">
                                 <label for="cidade">Cidade</label><br>
-                                <input name="cidade" id="cidade" data-cidade required><br>
+                                <input name="cidade" id="cidade" data-cidade placeholder="Selecione sua cidade" required><br>
                             </span>
                         </div>
 
                         <div class="formulario__linha">
                             <span class="formulario__input">
                                 <label for="endereco">Endereço</label><br>
-                                <input name="endereco" id="endereco" data-endereco required><br>
+                                <input name="endereco" id="endereco" data-endereco placeholder="Nome da rua" required><br>
                             </span>
 
                             <span class="formulario__input">
                                 <label for="bairro">Bairro</label><br>
-                                <input name="bairro" id="bairro" data-bairro required><br>
+                                <input name="bairro" id="bairro" data-bairro placeholder="Centro" required><br>
                             </span>
                         </div>
 
                         <div class="formulario__linha">
                             <span class="formulario__input">
                                 <label for="numero">Número</label><br>
-                                <input type="number" name="numero" data-numero required><br>
+                                <input type="number" name="numero" data-numero placeholder="000" required><br>
                             </span>
 
                             <span class="formulario__input">
                                 <label for="complemento">Complemento</label><br>
-                                <input type="text" name="complemento" data-complemento required><br>
+                                <input type="text" name="complemento" data-complemento placeholder="Casa" required><br>
                             </span>
                         </div>
 
                         <div class="formulario__linha">
                             <span class="formulario__input">
                                 <label for="email">E-mail</label><br>
-                                <input type="email" name="email" data-email required><br>
+                                <input type="email" name="email" data-email placeholder="seu.nome@email.com" required><br>
                             </span>
 
                             <span class="formulario__input">
                                 <label for="senha">Senha</label><br>
-                                <input type="password" name="senha" data-senha required><br>
+                                <input type="password" name="senha" data-senha placeholder="************" required><br>
                             </span>
                         </div>
 
                         <div class="formulario__linha" id="formulario__buttons">
+
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Já possuo cadastro</button>
 
-                            
-
                             <span>
-                                <a href="index.html"><button type="button">Cancelar</button></a>
+                                <a href="../index.html"><button>Cancelar</button></a>
                                 <input type="submit" value="Salvar">
                             </span>
                         </div>
@@ -168,7 +159,7 @@
     <footer class="footer">
 
         <div class="header__nav">
-            <a href="index.html">
+            <a href="../index.html">
                 <h1>+EVENTS</h1>
             </a>
             <div>
