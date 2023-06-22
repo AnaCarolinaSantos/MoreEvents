@@ -22,6 +22,10 @@
     font-family: var(--arimo);
 }
 
+body {
+    background-color: var(--black) !important;
+}
+
 /* Header----------------------------------------------------- */
 
 .header {
@@ -49,7 +53,6 @@
 /* main----------------------------------------------------- */
 
 .main {
-    background-color: var(--black);
     width: 100%;
 }
 
@@ -174,9 +177,17 @@
 
 /* Form----------------------------------------------------- */
 
-.main__formulario{
+.main__formulario {
     display: flex;
     justify-content: center;
+}
+
+.formulario__titulo {
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+    margin: 2rem 2rem 0 2rem;
 }
 
 .formulario__ {
@@ -184,11 +195,12 @@
     margin: 25px;
     background-color: var(--dark-grey);
     width: 1000px;
-    height: 780px;
+    height: 800px;
 }
 
 .formulario__ h3 {
-    margin: 25px;
+    margin: 25px 25px 25px 40px;
+    font-size: 24px;
 }
 
 .formulario__ form {
@@ -210,7 +222,6 @@
     width: 450px;
     height: 45px;
     padding-left: 10px;
-    background-color: var(--black);
     border-radius: 4px;
     margin-top: 10px;
 }
@@ -219,6 +230,27 @@
     margin: 5px;
 }
 
+.formulario__input label {
+    font-size: 18px;
+}
+
+.formulario__input input {
+    background-color: var(--black);
+    border-radius: 4px;
+    border: none;
+    border-left: 5px solid #C44EED;
+    color: var(--white);
+}
+
+#formulario__linha__dupla {
+    width: 220px;
+}
+
+.formulario__cep {
+    color: rgb(231, 35, 35);
+    font-size: 13px;
+    margin-bottom: 0;
+}
 
 .formulario__linha {
     display: flex;
@@ -227,6 +259,7 @@
 .formulario__linha a, .formulario__ h3 {
     text-decoration: none;
     color: var(--purpple);
+    align-self: end;
 }
 
 #formulario__buttons {
@@ -235,18 +268,25 @@
 }
 
 .formulario__linha button, input[type=submit] {
-    background-color: var(--darkGrey);
+    border: none;
     width: 130px;
     height: 35px;
+    margin-left: 2rem;
     border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: rgba(207, 207, 207, 0.50);
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+    transition: .3s;
+}
+
+.formulario__linha button:hover, input[type=submit]:hover {
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
 }
 
 input[type=submit] {
     background-color: var(--purpple);
-}
-
-#formulario__linha__dupla {
-    width: 220px;
 }
 
 /* Footer----------------------------------------------------- */

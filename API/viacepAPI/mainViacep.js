@@ -20,7 +20,7 @@ async function buscaEndereco(cep){
         console.log(consultaCEPConvetida);
         return consultaCEPConvetida;
     }catch(erro){
-        mensagemErro.innerHTML = `<p>CEP inválido. Tente Novamente!</p>`;
+        mensagemErro.innerHTML = `<p class="formulario__cep">CEP inválido. Tente Novamente!</p>`;
         console.log(erro)
     }
 }
