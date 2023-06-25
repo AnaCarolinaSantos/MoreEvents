@@ -48,19 +48,7 @@ async function criaCliente(nome, nascimento, cpf, contato, cep, estado,
             "Content-type": "application/json"
         },
         body: JSON.stringify({
-            nome_usuario: nome ,
-            data_nascimento: nascimento,
-            cpf: cpf,
-            telefone: contato,
-            cep: cep,
-            estado: estado,
-            cidade: cidade,
-            endereco: endereco,
-            bairro: bairro,
-            numero: numero,
-            complemento: complemento,
-            email: email,
-            senha: senha
+            "nome_usuario":"Matheus Vsasarela","data_nascimento":"Nova Esperança","cpf":"12345678999","telefone":"47996242549","cep":"89051615","estado":"SC","cidade":"Blumenau","bairro":"Nova Esperança","numero":{"$numberInt":"265"},"complemento":"casa","email":"matheus@gmail.com","senha":"15155"
         })
     });
 
