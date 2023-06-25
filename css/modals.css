@@ -1,0 +1,29 @@
+.modal-sheet .modal-dialog {
+  width: 380px;
+  transition: bottom .75s ease-in-out;
+}
+.modal-sheet .modal-footer {
+  padding-bottom: 2rem;
+}
+
+#div{
+  color: #262626;
+}
+.modal-alert .modal-dialog {
+  width: 380px;
+}
+
+.modal-tour .modal-dialog {
+  width: 380px;
+}
+
+ #exampleModalLabel{
+  font-size: 70px;
+  color: black;
+  font-family: var(--iceland);
+  width: 200px;
+  height: 150px;
+  padding-left: 7rem;
+  flex-direction: column;
+   display: flex;
+}
