@@ -48,10 +48,19 @@ async function criaCliente(nome, nascimento, cpf, contato, cep, estado,
             "Content-type": "application/json"
         },
         body: JSON.stringify({
-            // titulo: titulo,
-            // descricao: `${descricao} mil visualizações`,
-            // url: url,
-            // imagem: imagem
+            nome_usuario: nome ,
+            data_nascimento: nascimento,
+            cpf: cpf,
+            telefone: contato,
+            cep: cep,
+            estado: estado,
+            cidade: cidade,
+            endereco: endereco,
+            bairro: bairro,
+            numero: numero,
+            complemento: complemento,
+            email: email,
+            senha: senha
         })
     });
 
@@ -67,5 +76,6 @@ async function criaCliente(nome, nascimento, cpf, contato, cep, estado,
 export const conectaApi = {
     listaEvento,
     criaEvento,
-    buscaEvento
+    buscaEvento,
+    criaCliente
 }

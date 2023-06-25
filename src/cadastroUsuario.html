@@ -32,7 +32,8 @@
         </nav>
     </header>
 
-    <main class="main">
+    <main class="main" >
+        <h1 class="formulario__titulo">Cadastro</h1>
 
         <article class="main__formulario">
             <section>
@@ -48,7 +49,7 @@
                 
                 <h3>Preencha os campos abaixo</h3>
 
-                <form onsubmit="cadastrarCliente()" action="" method="post">
+                <form method="POST" data-formulario>
 
                     <span>
                         <div class="formulario__linha">
@@ -73,7 +74,7 @@
                         <div class="formulario__linha">
                             <span class="formulario__input">
                                 <label for="contato">Contato</label><br>
-                                <input type="tel" name="contato" data-telefone required><br>
+                                <input type="tel" name="contato" data-contato placeholder="(00) 00000-0000" required><br>
                             </span>
 
                             <span class="formulario__input">
@@ -150,7 +151,6 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
-           
                 <div class="modal-header p-5 pb-4 border-bottom-0">
         
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -171,7 +171,6 @@
                   <hr class="my-0">
                 </form>
               </div>
-         
         </div>
      </div>
     </div>
@@ -214,8 +213,7 @@
           }
       
         }
-      
-      
+ 
       </script>
 </body>
 
