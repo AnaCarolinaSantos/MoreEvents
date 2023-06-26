@@ -73,9 +73,9 @@ body {
 }
 
 .container__cards {
-    display: grid;
+    display: flex;
     justify-content: space-around;
-    grid-template-columns: 20% 20% 20% 20%;
+    align-items: center;
 }
 
 .container__cards a {

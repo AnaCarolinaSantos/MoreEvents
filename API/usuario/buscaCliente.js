@@ -1,10 +1,9 @@
-import { conectaApi } from "./conectaApi.js";
-import constroiCard from "./mostrarEvento.js";  
+// Importss
 
 const buttonPesquisar = document.querySelector("[data-buttonPesquisa]")
 
 
-async function buscaEvento(evento){
+async function buscaCliente(evento){
     evento.preventDefault;
 
     const termoBusca = document.querySelector("[data-busca]").value;
