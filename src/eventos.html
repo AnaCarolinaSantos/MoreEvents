@@ -22,7 +22,8 @@
             </div>
             <div>
                 <a href="meus-ingressos.html"><img class="img__ticket" src="../img/sacola.png" alt=""></a>
-                <a href="cadastroUsuario.html">
+                <a type="button" class="btn btn-primary" id="button__modal" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
                     <span class="img__perfil">
                         <img src="../img/perfil-f.png" alt="">
                     </span>
@@ -111,15 +112,8 @@
 
         <section>
             <ul class="container__cards__geral" data-eventos>
-                <!-- <li class="container__card">
-                    <img src="../img/Eventos - Baladas/Fluxo1.jpeg" class="card-img" alt="">
-                    <h3>Nome do evento</h3>
-                    <h4>14/08/22</h4>
-                    <h5>São Paulo | SP</h5>
-                    <button>Ver</button>
-                </li> -->
-
-                <li class="container__cardMatheus">
+               
+                <li class="container__card__evento">
                     <a href="../index.html"><img src="../img/Eventos - Baladas/Fluxo1.jpeg" class="card-img" alt="">
                     <div class="descricao__evento">
                         <div class="data__evento">
@@ -137,83 +131,45 @@
                         </div>
                     </div></a>
                 </li>
-                <li class="container__cardMatheus">
-                    <img src="../img/Eventos - Baladas/Fluxo1.jpeg" class="card-img" alt="">
-                    <div class="descricao__evento">
-                        <div class="data__evento">
-                            <span>
-                                <p>1</p>
-                                <p>Mar</p>
-                            </span>
-                        </div>
-                        <div class="informacao__evento">
-                            <span>
-                                <h4>Nome do evento</h4>
-                                <h5>14/08/22</h5>
-                                <p>São Paulo | SP</p>
-                            </span>
-                        </div>
-                    </div>
-                </li>
-                <li class="container__cardMatheus">
-                    <img src="../img/Eventos - Baladas/Fluxo1.jpeg" class="card-img" alt="">
-                    <div class="descricao__evento">
-                        <div class="data__evento">
-                            <span>
-                                <p>1</p>
-                                <p>Mar</p>
-                            </span>
-                        </div>
-                        <div class="informacao__evento">
-                            <span>
-                                <h4>Nome do evento</h4>
-                                <h5>14/08/22</h5>
-                                <p>São Paulo | SP</p>
-                            </span>
-                        </div>
-                    </div>
-                </li>
-                <li class="container__cardMatheus">
-                    <img src="../img/Eventos - Baladas/Fluxo1.jpeg" class="card-img" alt="">
-                    <div class="descricao__evento">
-                        <div class="data__evento">
-                            <span>
-                                <p>1</p>
-                                <p>Mar</p>
-                            </span>
-                        </div>
-                        <div class="informacao__evento">
-                            <span>
-                                <h4>Nome do evento</h4>
-                                <h5>14/08/22</h5>
-                                <p>São Paulo | SP</p>
-                            </span>
-                        </div>
-                    </div>
-                </li>
-                <li class="container__cardMatheus">
-                    <img src="../img/Eventos - Baladas/Fluxo1.jpeg" class="card-img" alt="">
-                    <div class="descricao__evento">
-                        <div class="data__evento">
-                            <span>
-                                <p>1</p>
-                                <p>Mar</p>
-                            </span>
-                        </div>
-                        <div class="informacao__evento">
-                            <span>
-                                <h4>Nome do evento</h4>
-                                <h5>14/08/22</h5>
-                                <p>São Paulo | SP</p>
-                            </span>
-                        </div>
-                    </div>
-                </li>
+                
                 
             </ul>
         </section>
 
     </main>
+
+     <!-- Modal login INICIO -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <h1 class="modal-title" id="exampleModalLabel">+EVENTS</h1>
+                <div class="modal-body p-5 pt-0">
+                    <form class="">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control rounded-3" id="floatingInput"
+                                placeholder="name@example.com">
+                            <label for="floatingInput">Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Senha</label>
+                        </div>
+                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit"
+                            onclick="logar(); return false">Entrar</button>
+                        <div class="modal__links">
+                            <a href="####"><small class="text-muted">Esqueci minha senha</small></a>
+                            <a href="cadastroUsuario.html"><small class="text-muted">Ainda não possuo cadastro</small></a>
+                        </div>
+                        <hr class="my-0">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal login FINAL -->
 
     <footer class="footer">
 
@@ -233,6 +189,7 @@
     </footer>
 
     <script src="javaScript/main.js"></script>
+    <script type="module" src="../API/mostraEvento.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>

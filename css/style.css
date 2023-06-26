@@ -118,7 +118,7 @@ body {
 }
 
 
-.container__cardMatheus {
+.container__card__evento {
     background-color: var(--dark-grey);
     height: 300px;
     width: 400px;
@@ -128,7 +128,7 @@ body {
     display: grid;
 }
 
-.container__cardMatheus a{
+.container__card__evento a{
 text-decoration: none;
 }
 
@@ -366,6 +366,72 @@ text-decoration: none;
 input[type=submit] {
     background-color: var(--purpple);
 }
+
+/* Modal------------------------------------------------------ */
+
+.modal-sheet .modal-dialog {
+    width: 380px;
+    transition: bottom .75s ease-in-out;
+}
+
+.modal-sheet .modal-footer {
+padding-bottom: 2rem;
+}
+
+#div{
+color: #262626;
+}
+.modal-alert .modal-dialog {
+width: 380px;
+}
+
+.modal-tour .modal-dialog {
+width: 380px;
+}
+
+#exampleModalLabel{
+font-size: 70px;
+color: var(--white);
+font-family: var(--iceland);
+height: 150px;
+padding-left: 7rem;
+flex-direction: column;
+display: flex;
+}
+
+.modal-content {
+background-color:  var(--dark-grey) !important;
+}
+
+.form-control {
+background-color: var(--black) !important;
+border-radius: 4px !important;
+border: none !important;
+border-left: 5px solid #C44EED !important;
+color: var(--white);
+}
+
+.modal__links {
+margin-bottom: 15px;
+}
+
+.modal__links small, .modal__links a{
+color: var(--purpple) !important;
+text-decoration: none;
+display: flex;
+justify-content: center;
+margin-top: 3px;
+}
+
+#button__modal {
+background-color: rgba(0,0,0,0) !important;
+border: none !important;
+}
+
+#floatingInput label {
+background-color: var(--black) !important;
+}
+
 
 /* Footer----------------------------------------------------- */
 
