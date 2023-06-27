@@ -255,6 +255,11 @@ text-decoration: none;
 
 /* Form----------------------------------------------------- */
 
+.obrigatoriedade {
+    color: var(--purpple);
+    margin-left: 5px;
+}
+
 .main__formulario {
     display: flex;
     justify-content: center;
