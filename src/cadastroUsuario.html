@@ -23,7 +23,7 @@
             <div>
                 <a href="meus-ingressos.html"><img class="img__ticket" src="../img/sacola.png" alt=""></a>
                 <a type="button" class="btn btn-primary" id="button__modal" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
+                    data-bs-target="#modal__login">
                     <span class="img__perfil">
                         <img src="../img/perfil-f.png" alt="">
                     </span>
@@ -54,7 +54,7 @@
                     <span>
                         <div class="formulario__linha">
                             <span class="formulario__input">
-                                <label for="nome">Nome<span class="obrigatoriedade">*<span> </label><br>
+                                <label for="nome">Nome<span class="obrigatoriedade">*<span></label><br>
                                 <input type="text" name="nome" data-nome required placeholder="Nome Completo"><br>
                             </span>
 
@@ -135,7 +135,7 @@
 
                         <div class="formulario__linha" id="formulario__buttons">
                             <a type="button" class="btn btn-primary" id="button__modal" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Já possuo cadastro</a>
+                                data-bs-target="#modal__login">Já possuo cadastro</a>
 
                             <span>
                                 <a href="../index.html"><button type="button">Cancelar</button></a>
@@ -150,7 +150,7 @@
 
     </main>
     <!-- Modal login INICIO -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal__login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header p-5 pb-4 border-bottom-0">
@@ -171,7 +171,8 @@
                         <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit"
                             onclick="logar(); return false">Entrar</button>
                         <div class="modal__links">
-                            <a href="####"><small class="text-muted">Esqueci minha senha</small></a>
+                            <a type="button" class="btn btn-primary" id="button__modal" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalToggle"><small class="text-muted">Esqueci minha senha</small></a>
                             <a href="cadastroUsuario.html"><small class="text-muted">Ainda não possuo cadastro</small></a>
                         </div>
                         <hr class="my-0">
@@ -181,6 +182,52 @@
         </div>
     </div>
     <!-- Modal login FINAL -->
+
+    <!-- Modal Esqueci minha senha -->
+
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <h1 class="modal-title" id="exampleModalLabel">+EVENTS</h1>
+            <div class="modal-body p-5 pt-0">
+                <form class="">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control rounded-3" id="floatingInput"
+                            placeholder="name@example.com">
+                        <label for="floatingInput">Confirme seu e-mail</label>
+                    </div>
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit"
+                            onclick="logar(); return false">ENVIAR</button>
+                        <div class="modal__links">
+                            <a type="button" class="btn btn-primary" id="button__modal" data-bs-toggle="modal"
+                                data-bs-target="#modal__login">Entrar</a>
+                        </div>
+                    <hr class="my-0">
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Hide this modal and show the first with the button below.
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button>
 
     <footer class="footer">
 
