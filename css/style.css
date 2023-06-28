@@ -553,6 +553,35 @@ input[type=submit] {
     border-bottom: 1px solid var(--blue);
 }
 
+/* Meus ingressos----------------------------------------------------- */
+
+.ingressos__titulo {
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+    margin: 2rem 2rem 0 2rem;
+}
+
+.main__ingressos {
+    display: flex;
+    justify-content: center;
+}
+
+.ingressos {
+    border-radius: 5px;
+    margin: 25px;
+    padding: 1.5rem;
+    background-color: var(--dark-grey);
+    width: 1000px;
+    height: 800px;
+}
+
+.ingressos__img {
+    height: 100px;
+    width: 150px;
+}
+
 /* Footer----------------------------------------------------- */
 
 .footer {
