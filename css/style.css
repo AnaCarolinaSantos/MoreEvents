@@ -261,7 +261,7 @@ text-decoration: none;
 }
 
 .img__detalhamento__evento {
-    width: 100%;
+    width: 90%;
     border-bottom: 6px solid var(--purpple);
 }
 
@@ -269,7 +269,7 @@ text-decoration: none;
     padding-right: 50px;
     padding-left: 35px;
     text-justify: unset;
-    width: 60%;
+    width: 70%;
 }
 
 /* Form----------------------------------------------------- */
@@ -413,7 +413,7 @@ input[type=submit] {
 .evento__detalhamento {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
     margin-top: 10px;
 }
 
