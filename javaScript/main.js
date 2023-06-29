@@ -32,3 +32,10 @@ function manipulaDados(operacao, controle) {
         tipoIngresso.value = parseInt(tipoIngresso.value) + 1;
     }
 }
+
+
+// Alerta senha salva com sucesso---------------------
+
+function senhaSalva() {
+    alert("Senha alterada com sucesso");
+}
