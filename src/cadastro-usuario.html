@@ -144,9 +144,88 @@
                                     <input type="submit" value="Salvar">
                                 </span>
                             </div>
-                        </span>
-                    </form>
-                </section>
+                            </span>
+                                <span id="linha__dupla">
+                                    <label for="cpf">CPF<span class="obrigatoriedade">*<span> </label><br>
+                                    <input type="number" name="cpf" id="formulario__linha__dupla" data-cpf required placeholder="000.000.000-00"><br>
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="formulario__linha">
+                            <span class="formulario__input">
+                                <label for="contato">Contato<span class="obrigatoriedade">*<span> </label><br>
+                                <input type="tel" name="contato" data-contato placeholder="(00) 00000-0000"
+                                    required><br>
+                            </span>
+
+                            <span class="formulario__input">
+                                <label for="cep">CEP<span class="obrigatoriedade">*<span> </label><br>
+                                <input name="cep" id="cep" data-cep required placeholder="00000-000"><br>
+                                <div id="erro"></div>
+                            </span>
+                        </div>
+
+                        <div class="formulario__linha">
+                            <span class="formulario__input">
+                                <label for="estado">Estado<span class="obrigatoriedade">*<span> </label><br>
+                                <input name="estado" id="estado" data-estado required placeholder="SC"><br>
+                            </span>
+
+                            <span class="formulario__input">
+                                <label for="cidade">Cidade<span class="obrigatoriedade">*<span> </label><br>
+                                <input name="cidade" id="cidade" data-cidade required placeholder="Blumenau"><br>
+                            </span>
+                        </div>
+
+                        <div class="formulario__linha">
+                            <span class="formulario__input">
+                                <label for="endereco">Endereço<span class="obrigatoriedade">*<span> </label><br>
+                                <input name="endereco" id="endereco" data-endereco required placeholder="Rua"><br>
+                            </span>
+
+                            <span class="formulario__input">
+                                <label for="bairro">Bairro<span class="obrigatoriedade">*<span> </label><br>
+                                <input name="bairro" id="bairro" data-bairro required placeholder="Nova Esperança"><br>
+                            </span>
+                        </div>
+
+                        <div class="formulario__linha">
+                            <span class="formulario__input">
+                                <label for="numero">Número<span class="obrigatoriedade">*<span> </label><br>
+                                <input type="number" name="numero" data-numero required placeholder="1234"><br>
+                            </span>
+
+                            <span class="formulario__input">
+                                <label for="complemento">Complemento</label><br>
+                                <input type="text" name="complemento" data-complemento placeholder="Casa"><br>
+                            </span>
+                        </div>
+
+                        <div class="formulario__linha">
+                            <span class="formulario__input">
+                                <label for="email">E-mail<span class="obrigatoriedade">*<span> </label><br>
+                                <input type="email" name="email" data-email required placeholder="nome@exemplo.com"><br>
+                            </span>
+
+                            <span class="formulario__input">
+                                <label for="senha">Senha<span class="obrigatoriedade">*<span> </label><br>
+                                <input type="password" name="senha" data-senha required placeholder="********"><br>
+                            </span>
+                        </div>
+
+                        <div class="formulario__linha" id="formulario__buttons">
+                            <a type="button" class="btn btn-primary" id="button__modal" data-bs-toggle="modal"
+                                data-bs-target="#modal__login">Já possuo cadastro</a>
+
+                            <span>
+                                <a href="../index.html"><button type="button">Cancelar</button></a>
+                                <input type="submit" value="Salvar">
+                            </span>
+                        </div>
+                    </span>
+                </form>
+            </section>
 
             </article>
 
@@ -279,6 +358,7 @@
                 </div>
             </div>
         </div>
+        <!-- Modal esqueci minha senha FINAL -->
 
         <footer class="footer">
 
