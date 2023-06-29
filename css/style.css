@@ -453,6 +453,16 @@ input[type=submit] {
     background-color:  var(--dark-grey) !important;
 }
 
+.form-floating input {
+    color: var(--white) !important;
+}
+
+.form-control~label,
+.form-floating label::after {
+    color: var(--white) !important;
+    background-color: rgba(0,0,0,0) !important;
+}
+
 .form-control {
     background-color: var(--black) !important;
     border-radius: 4px !important;
