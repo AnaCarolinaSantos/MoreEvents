@@ -1,23 +1,23 @@
 import { conectaApi } from "../conectaApi";
 import constroiCard from "./mostraEvento.js";  
 
-const buttonPesquisar = document.querySelector("[data-buttonPesquisa]")
+const Pesquisar = document.querySelector("[data-Pesquisa]")
 
 
 async function buscaEvento(evento){
     evento.preventDefault;
 
-    const termoBusca = document.querySelector("[data-busca]").value;
+    const termoBusca = document.querySelector("[data-Pesquisa]").value;
     const busca = await conectaApi.buscaEvento(termoBusca);
 
-    const lista = document.querySelector("[data-lista]");
+    const lista = document.querySelector("[data-eventos]");
     
     while(lista.firstChild){
         lista.removeChild(lista.firstChild);
     }
 
     busca.forEach(element => lista.appendChild(
-        constroiCard(element.titulo, element.descricao, element.url, element.imagem))
+        constroiCard(element.dia_evento, element.mes_evento, element.nome_evento, element.data_evento, element.cidade, element.estado))
     );
     
     if(busca.length == 0) {
@@ -26,4 +26,4 @@ async function buscaEvento(evento){
 
 }
 
-buttonPesquisar.addEventListener("click", evento => buscaEvento(evento))
+Pesquisar.addEventListener("click", evento => buscaEvento(evento))
