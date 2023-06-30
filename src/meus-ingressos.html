@@ -55,10 +55,10 @@
                     <tbody>
                         <tr>
                             <td><img class="ingressos__img" src="../img/Eventos - Baladas/After Aguia.jpeg"></td>
-                            <td>Nome de exemplo</td>
-                            <td>00/00/0000</td>
+                            <td>After da Águia</td>
+                            <td>29/06/2023</td>
                             <td>Local de exemplo</td>
-                            <td>Categoria</td>
+                            <td>Balada</td>
                             <td><div>Ativo</div></td>
                             <td>...</td>
                         </tr>
@@ -67,7 +67,7 @@
                             <td>Nome de exemplo</td>
                             <td>00/00/0000</td>
                             <td>Local de exemplo</td>
-                            <td>Categoria</td>
+                            <td>Arraiá</td>
                             <td><div>Ativo</div></td>
                             <td>...</td>
                         </tr>
@@ -76,7 +76,7 @@
                             <td>Nome de exemplo</td>
                             <td>00/00/0000</td>
                             <td>Local de exemplo</td>
-                            <td>Categoria</td>
+                            <td>Balada</td>
                             <td><div>Ativo</div></td>
                             <td>...</td>
                         </tr>
@@ -85,7 +85,7 @@
                             <td>Nome de exemplo</td>
                             <td>00/00/0000</td>
                             <td>Local de exemplo</td>
-                            <td>Categoria</td>
+                            <td>Balada</td>
                             <td><div>Ativo</div></td>
                             <td>...</td>
                         </tr>
@@ -94,7 +94,7 @@
                             <td>Nome de exemplo</td>
                             <td>00/00/0000</td>
                             <td>Local de exemplo</td>
-                            <td>Categoria</td>
+                            <td>Balada</td>
                             <td><div>Ativo</div></td>
                             <td>...</td>
                         </tr>
@@ -103,7 +103,7 @@
                             <td>Nome de exemplo</td>
                             <td>00/00/0000</td>
                             <td>Local de exemplo</td>
-                            <td>Categoria</td>
+                            <td>Balada</td>
                             <td><div>Ativo</div></td>
                             <td>...</td>
                         </tr>
@@ -112,7 +112,7 @@
                             <td>Nome de exemplo</td>
                             <td>00/00/0000</td>
                             <td>Local de exemplo</td>
-                            <td>Categoria</td>
+                            <td>Balada</td>
                             <td><div>Ativo</div></td>
                             <td>...</td>
                         </tr>
@@ -121,7 +121,7 @@
                             <td>Nome de exemplo</td>
                             <td>00/00/0000</td>
                             <td>Local de exemplo</td>
-                            <td>Categoria</td>
+                            <td>Balada</td>
                             <td><div>Ativo</div></td>
                             <td>...</td>
                         </tr>
@@ -290,7 +290,10 @@
     <script src="http://code.jquery.com/jquery-migrate-1.0.0rc1.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script>
-        let table = new DataTable('#ingressos__tabela');
+        let table = $('#ingressos__tabela').DataTable({
+            pageLength : 5,
+            "dom": 'ftipr'
+        })
     </script>
 
     <script src="../javaScript/main.js"></script>

@@ -611,6 +611,12 @@ input[type=submit] {
     width: 150px;
 }
 
+table.dataTable thead {
+    background-color: var(--black);
+    margin-top: 2rem;
+}
+
+
 /* Footer----------------------------------------------------- */
 
 .footer {
