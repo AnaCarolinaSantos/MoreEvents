@@ -5,14 +5,14 @@ const lista = document.querySelector("[data-eventos]");
 export default function constroiCard(data_evento, titulo_evento, cidade, estado){
     
 
-    const monName = new Array ("Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Ago", "Out", "Nov", "Dez");
+    const monName = new Array ("Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez");
     let dataCompleta = new Date(data_evento);
     console.log(dataCompleta)
     let dia = dataCompleta.getDay();
     let mes = monName[dataCompleta.getMonth()];
     let ano = dataCompleta.getFullYear();
     console.log(ano);
-    let data = `${("0" + (dataCompleta.getDay() + 1)).slice(-2)}/${("0" + (dataCompleta.getMonth() + 1)).slice(-2)}/${ano}`;
+    let data = `${dia}/${("0" + (dataCompleta.getMonth() + 1)).slice(-2)}/${ano}`;
 
     const evento = document.createElement("li")
     evento.className = "container__card__evento";
