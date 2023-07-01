@@ -2,21 +2,32 @@ import { conectaApi } from "../conectaApi.js";
 
 const lista = document.querySelector("[data-eventos]");
 
-export default function constroiCard(dia_evento, mes_evento, nome_evento, data_evento, cidade, estado){
+export default function constroiCard(data_evento, titulo_evento, cidade, estado){
+    
+
+    const monName = new Array ("Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Ago", "Out", "Nov", "Dez");
+    let dataCompleta = new Date(data_evento);
+    console.log(dataCompleta)
+    let dia = dataCompleta.getDay();
+    let mes = monName[dataCompleta.getMonth()];
+    let ano = dataCompleta.getFullYear();
+    console.log(ano);
+    let data = `${("0" + (dataCompleta.getDay() + 1)).slice(-2)}/${("0" + (dataCompleta.getMonth() + 1)).slice(-2)}/${ano}`;
+
     const evento = document.createElement("li")
     evento.className = "container__card__evento";
-    evento.innerHTML = `<a href="../index.html"><img src="../img/Eventos - Baladas/Fluxo1.jpeg" class="card-img" alt="">
+    evento.innerHTML = `<a href="evento-informacoes.html"><img src="../img/Eventos - Baladas/Fluxo1.jpeg" class="card-img" alt="">
     <div class="descricao__evento">
         <div class="data__evento">
             <span>
-                <p>${dia_evento}</p>
-                <p>${mes_evento}</p>
+                <p>${dia}</p>
+                <p>${mes}</p>
             </span>
         </div>
         <div class="informacao__evento">
             <span>
-                <h4>${nome_evento}</h4>
-                <h5>${data_evento}</h5>
+                <h4>${titulo_evento}</h4>
+                <h5>${data}</h5>
                 <p>${cidade} | ${estado}</p>
             </span>
         </div>
@@ -26,13 +37,13 @@ export default function constroiCard(dia_evento, mes_evento, nome_evento, data_e
 }
 
 async function listaEvento(){
-    try{
+    try{       
         const lista_eventosApi = await conectaApi.listaEvento();
         lista_eventosApi.forEach(element => lista.appendChild(
-            constroiCard(element.dia_evento, element.mes_evento, element.nome_evento, element.data_evento, element.cidade, element.estado))
+            constroiCard(element.data_evento, element.titulo_evento, element.cidade, element.estado))
         );
-    }catch{
-        lista.innerHTML = `<h2 class="mensagem__titulo">Não foi possível carregar a lista de Eventos</h2>`;
+    }catch (error){
+        lista.innerHTML = `<h2 class="mensagem__titulo">Não foi possível carregar a lista de Eventos</h2> ${error}`;
     }
 }
 
