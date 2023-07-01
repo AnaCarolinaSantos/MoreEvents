@@ -1,4 +1,4 @@
-import { conectaApi } from "../conectaApi";
+import { conectaApi } from "../conectaApi.js";
 import constroiCard from "./mostraEvento.js";  
 
 const Pesquisar = document.querySelector("[data-Pesquisa]")
