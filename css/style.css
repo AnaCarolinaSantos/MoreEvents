@@ -130,7 +130,7 @@ body {
 .container__cards__geral {
     display: grid;
     grid-template-columns: 23% 23% 23% 23%;
-    justify-content: center;    
+    justify-content: space-between;    
 }
 
 
@@ -138,14 +138,26 @@ body {
     background-color: var(--dark-grey);
     height: 90%;
     width: 90%;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 2rem;
     border-radius: 4px;
-    display: grid;
 }
 
-.container__card__evento a{
+.container__card__evento:hover {
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.25);
+}
+
+.container__card__evento a {
 text-decoration: none;
+}
+
+.informacao__evento h4 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.informacao__evento h5, p {
+    font-size: 13px;
+    font-weight: 400;
 }
 
 .descricao__evento {
@@ -159,28 +171,28 @@ text-decoration: none;
 
 .descricao__evento div {
     display: flex;
-    align-items: center;
 }
 
 .data__evento {
     width: 120px;
-    height: 80px;
+    height: 60px;
     display: flex;
     justify-content: center;
-    border-right: solid 2px var(--purpple);
+    border-right: solid 1px var(--blue);
 }
 
 .data__evento span {
     background: linear-gradient(180deg, #2C7AA6 0%, #C44EED 100%);
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     border-radius: 5px;
     text-align: center;
-    padding: 10px;
+    padding-top: 2px;
 }
 
 .data__evento p {
-    height: 5px;
+    height: 2px;
+    font-size: 16px;
 }
 
 .informacao__evento {
@@ -225,9 +237,18 @@ text-decoration: none;
     justify-content: space-between;
 }
 
+.categoria__pesquisa h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
 .categoria__pesquisa input {
     border-radius: 4px;
     border: var(--black);
+}
+
+.categoria__pesquisa input::placeholder {
+    color: var(--white);
 }
 
 /* imagens----------------------------------------------------- */

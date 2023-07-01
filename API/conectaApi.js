@@ -1,7 +1,7 @@
 // Funcoes sobre listagem e criacao de eventos
 
 async function listaEvento() {
-    const conexao = await fetch("http://localhost:3000/evento", ()=>{ mode: 'no-cors'});
+    const conexao = await fetch("http://localhost:3000/evento", () => { mode: 'no-cors'} );
     const conexaoConvertida = await conexao.json();
 
     return conexaoConvertida;
