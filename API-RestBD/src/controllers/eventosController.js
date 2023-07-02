@@ -8,6 +8,18 @@ class EventoController {
     })
   }
 
+  static listarEventoPorId = (req, res) => {
+    const id = req.params.id;
+
+    eventos.findById(id, (err, autores) => {
+      if(err) {
+        res.status(400).send({message: `${err.message} - Usuário não localizado.`})
+      } else {
+        res.status(200).send(autores);
+      }
+    })
+  }
+
   static cadastrarEvento = (req, res) => {
     let evento = new eventos(req.body);
 

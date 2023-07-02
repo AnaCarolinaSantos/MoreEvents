@@ -20,9 +20,9 @@ async function cadastrarCliente() {
     try{    
         await conectaApi.criaCliente(nome, nascimento, cpf, contato, cep, estado, 
             cidade, endereco, bairro, numero, complemento, email, senha);
-        
-            window.location.href = "../index.html";
-    }catch(e){
+
+            location.href="../../index.html"
+        }catch(e){
         alert(e);       
     }
 }
