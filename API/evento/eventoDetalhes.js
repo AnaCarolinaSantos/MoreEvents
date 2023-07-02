@@ -76,9 +76,23 @@ return;
 
 async function eventoDetalhado(id){
     try{       
-        const eventosDetalhadoApi = await conectaApi.buscaEvento(id);
-        eventosDetalhadoApi.forEach(element => evento.appendChild(element.titulo_evento, element.local_nome, element.endereco, element.estado, element.cidade, element.bairro, element.numero, element.data_evento, element.local_coberto, element.faixa_etaria, element.hora_abertura, element.estacionamento, element.descricao))
-        ;
+        const eventosDetalhadoApi = await conectaApi.buscaEvento('649f7372516eb5ec9def92bd');
+        eventosDetalhadoApi.forEach(
+            element => evento.appendChild(
+                element.titulo_evento, 
+                element.local_nome, 
+                element.endereco, 
+                element.estado, 
+                element.cidade, 
+                element.bairro, 
+                element.numero, 
+                element.data_evento, 
+                element.local_coberto, 
+                element.faixa_etaria, 
+                element.hora_abertura, 
+                element.estacionamento, 
+                element.descricao
+            ));
     }catch (error){
         evento.innerHTML = `<h2 class="mensagem__titulo">Não foi possível carregar a lista de Eventos</h2> ${error}`;
     }
