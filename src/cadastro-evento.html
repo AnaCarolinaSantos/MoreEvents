@@ -39,12 +39,32 @@
 
             <section class="formulario__evento">
 
-                <h3>Preencha os campos abaixo</h3>
+                <div>
+                    <h3>Preencha os campos abaixo</h3>
+    
+                    <span class="formulario__select">
+                        <select class="formulario__categoria">
+                            <option value="balada">Balada</option>
+                            <option value="educacao">Educação</option>
+                            <option value="esporte">Esporte</option>
+                            <option value="feira">Feira</option>
+                            <option value="show">Show</option>
+                            <option value="teatro">Teatro</option>
+                            <option value="especial">Especial</option>
+                            <option value="arraia">Arraiá</option>
+                        </select>  
+                    </span>
+                </div>
 
                 <form method="POST" data-formulario>
 
                     <span>
                         <div class="formulario__linha">
+                            <span class="formulario__file">
+                                <label for="file">Imagem do evento<span class="obrigatoriedade">*<span></label><br>
+                                <input type="file" id="file" required>
+                            </span>
+                              
                             <span class="formulario__input">
                                 <label for="nome">Nome<span class="obrigatoriedade">*<span></label><br>
                                 <input type="text" name="nome" data-nome required placeholder="Nome do evento"><br>
@@ -109,6 +129,19 @@
                         </div>
 
                         <div class="formulario__linha">
+                            <span class="formulario__select">
+                                <label>Idade<span class="obrigatoriedade">*<span> </span></label><br>
+
+                                <select>
+                                    <option value="0">Livre</option>
+                                    <option value="10">Proibido para menores de 10 anos</option>
+                                    <option value="12">Proibido para menores de 12 anos</option>
+                                    <option value="14">Proibido para menores de 14 anos</option>
+                                    <option value="16">Proibido para menores de 16 anos</option>
+                                    <option value="18">Proibido para menores de 18 anos</option>
+                                </select>
+                            </span>
+                            
                             <span class="formulario__radio">
                                 <label>Local coberto<span class="obrigatoriedade">*<span> </label><br>
                                 
@@ -129,27 +162,14 @@
                                 <label style="margin-right: 15px;" for="possui-estacionamento">Sim</label>
 
                                 <input type="radio" id="nao-possui-estacionamento" name="estacionamento" value="nao-possui-estacionamento" data-estacionamento>
-                                <label for="nao-possui-estacionamento">Não</label>
+                                <label for="nao-possui-estacionamento">Não</label><br>
                             </span>
                         </div>
 
                         <div class="formulario__linha">
-                            <span class="formulario__input">
-                                <label>Idade<span class="obrigatoriedade">*<span> </span></label><br>
-
-                                <select>
-                                    <option value="0">Livre</option>
-                                    <option value="10">Proibido para menores de 10 anos</option>
-                                    <option value="12">Proibido para menores de 12 anos</option>
-                                    <option value="14">Proibido para menores de 14 anos</option>
-                                    <option value="16">Proibido para menores de 16 anos</option>
-                                    <option value="18">Proibido para menores de 18 anos</option>
-                                </select>
-                            </span>
-
-                            <span class="formulario__input">
+                            <span class="formulario__textarea">
                                 <label for="descricao">Descrição do evento<span class="obrigatoriedade">*<span> </span></label><br>
-                                <textarea maxlength="1000"></textarea><br>
+                                <textarea rows="8" maxlength="1000"></textarea><br>
                             </span>
                         </div>
 
