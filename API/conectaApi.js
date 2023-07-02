@@ -30,11 +30,12 @@ async function criaEvento(titulo, descricao, url, imagem) {
     return conexaoConvertida;
 }
 
-async function buscaEvento(termoBusca) {
-    const conexao = await fetch(`http://localhost:3000/evento?q=${termoBusca}`)
-    const conexaoConvertida = conexao.json();
+async function buscaEvento(id) {
+    const conexao = await fetch(`http://localhost:3000/evento/649f7372516eb5ec9def92bd`, ()=>{ mode: 'no-cors'}).then((res) => {res.json()}).catch((er) => {console.log(er)});
 
-    return conexaoConvertida;
+    const conexaoConvertida = conexao.then((res) => console.log(res));
+
+    return conexao;
 }
 
 //  Funcoes referente ao cadastro de usuario na plataforma 
@@ -43,12 +44,24 @@ async function criaCliente(nome, nascimento, cpf, contato, cep, estado,
     cidade, endereco, bairro, numero, complemento, email, senha) {
     
     const conexao = await fetch("http://localhost:3000/usuario", {
-        method: "POST",
+        method: "post",
         headers: {
             "Content-type": "application/json"
         },
         body: JSON.stringify({
-            "nome_usuario":"Matheus Vsasarela","data_nascimento":"Nova Esperança","cpf":"12345678999","telefone":"47996242549","cep":"89051615","estado":"SC","cidade":"Blumenau","bairro":"Nova Esperança","numero":{"$numberInt":"265"},"complemento":"casa","email":"matheus@gmail.com","senha":"15155"
+            nome_usuario:`${nome}`,
+            data_nascimento:`${nascimento}`,
+            cpf:`${cpf}`,
+            telefone:`${contato}`,
+            cep:`${cep}`,
+            estado:`${estado}`,
+            cidade:`${cidade}`,
+             endereco:`${endereco}`,
+             bairro:`${bairro}`,
+            numero: `${numero}`,
+            complemento:`${complemento}`,
+            email:`${email}`,
+            senha:`${senha}`
         })
     });
 
@@ -56,10 +69,56 @@ async function criaCliente(nome, nascimento, cpf, contato, cep, estado,
         throw new Error("Não foi possível realizar cadastro, tente novamnete mais tarde!");
     }
 
-    const conexaoConvertida = await conexao.json();
-
-    return conexaoConvertida;
+    return true;
 }
+
+
+// Funções referente evento detalhados
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const conectaApi = {
     listaEvento,

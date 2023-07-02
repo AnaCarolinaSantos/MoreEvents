@@ -41,3 +41,7 @@ function manipulaDados(operacao, controle) {
 function senhaSalva() {
     alert("Senha alterada com sucesso");
 }
+
+function sucessoCadastro() {
+    const ok = alert("Cadastro realizado com sucesso");    
+}
