@@ -15,6 +15,12 @@ class IngressoController {
           }
         })
     }
+    
+    static listarIngressos = (req, res) => {
+      ingressos.find((err, eventos) => {
+        res.status(200).json(eventos)
+    })
+  }
 
     static cadastrarIngresso = (req, res) => {
         let ingresso = new ingressos(req.body);

@@ -56,5 +56,15 @@ class EventoController {
         }
       })
   }
+
+  static listarEventosPorNome = (req, res) => {
+    const evento = req.query.titulo_evento
+
+    eventos.find({'titulo_evento': evento}, {}, (err, eventos) => {
+      res.status(200).send(eventos);
+
+    })
+  }
+
 }
 export default EventoController;

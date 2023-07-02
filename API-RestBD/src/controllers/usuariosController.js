@@ -2,6 +2,12 @@ import usuarios from "../modelos/Usuario.js";
 
 class UsuarioController {
 
+  static listarUsuarios = (req, res) => {
+    usuarios.find((err, eventos) => {
+      res.status(200).json(eventos)
+  })
+}
+
   static listarUsuarioPorId = (req, res) => {
     const id = req.params.id;
 

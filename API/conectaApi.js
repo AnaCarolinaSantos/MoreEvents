@@ -72,48 +72,20 @@ async function criaCliente(nome, nascimento, cpf, contato, cep, estado,
     return true;
 }
 
+async function listarIngressos() {
+    const conexao = await fetch("http://localhost:3000/ingresso", () => { mode: 'no-cors'} );
+    const conexaoConvertida = await conexao.json();
+
+    return conexaoConvertida;
+}
+async function listarUsuarios() {
+    const conexao = await fetch("http://localhost:3000/usuario", () => { mode: 'no-cors'} );
+    const conexaoConvertida = await conexao.json();
+
+    return conexaoConvertida;
+}
 
 // Funções referente evento detalhados
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -124,5 +96,7 @@ export const conectaApi = {
     listaEvento,
     criaEvento,
     buscaEvento,
-    criaCliente
+    criaCliente,
+    listarIngressos,
+    listarUsuarios
 }

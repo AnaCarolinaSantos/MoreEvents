@@ -26,3 +26,16 @@ async function buscaCliente(evento){
 }
 
 buttonPesquisar.addEventListener("click", evento => buscaEvento(evento))
+
+
+
+async function listaUsuarios(){
+    try{       
+        const lista_eventosApi = await conectaApi.listaEvento();
+        lista_eventosApi.forEach(element => lista.appendChild(
+            constroiCard(element.data_evento, element.titulo_evento, element.local_nome, element.cidade, element.estado))
+        );
+    }catch (error){
+        lista.innerHTML = `<h2 class="mensagem__titulo">Não foi possível carregar a lista de Eventos</h2> ${error}`;
+    }
+}
