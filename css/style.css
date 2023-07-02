@@ -331,17 +331,25 @@ text-decoration: none;
     height: 800px;
 }
 
-.formulario__ h3 {
+.formulario__evento {
+    border-radius: 5px;
+    margin: 25px;
+    background-color: var(--dark-grey);
+    width: 1000px;
+    height: 1000px;
+}
+
+.formulario__, .formulario__evento h3 {
     margin: 25px 25px 25px 40px;
     font-size: 24px;
 }
 
-.formulario__ form {
+.formulario__, .formulario__evento form {
     display: flex;
     justify-content:space-evenly;
 }
 
-.formulario__ div {
+.formulario__, .formulario__evento div {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
@@ -351,7 +359,7 @@ text-decoration: none;
     margin-left: 10px;
 }
 
-.formulario__ input {
+.formulario__ input, .formulario__evento input {
     width: 450px;
     height: 45px;
     padding-left: 10px;
@@ -375,6 +383,18 @@ text-decoration: none;
     color: var(--white) !important;
 }
 
+.formulario__radio input[type="radio"] {
+    -webkit-appearance: none;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: var(--black) !important;
+}
+
+.formulario__radio input[type="radio"]:checked {
+    background-color: var(--purpple);
+}
+
 #formulario__linha__dupla {
     width: 220px;
 }
@@ -389,7 +409,7 @@ text-decoration: none;
     display: flex;
 }
 
-.formulario__linha a, .formulario__ h3 {
+.formulario__linha a, .formulario__ h3, .formulario__evento h3 {
     text-decoration: none;
     color: var(--purpple);
     align-self: end;
