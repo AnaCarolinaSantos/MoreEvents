@@ -2,22 +2,21 @@ import { conectaApi } from "../conectaApi.js";
 import constroiCard from "./mostraEvento.js";  
 
 const Pesquisar = document.querySelector("[data-pesquisa]");
-const termoBusca = "Mega";
 const lista = document.querySelector("[data-eventos]");
 
-async function buscaEvento(){
+async function buscaEvento(termoBusca){
     try{       
         const lista_eventosApi = await conectaApi.listaEvento();
-        var listaBusca = lista_eventosApi.filter(element => String(element).includes(`Mega`));
+        let listaFiltrada = lista_eventosApi.filter(v => v.titulo_evento.toLowerCase().includes(termoBusca));
         
-        listaBusca.forEach((element) => {
-            lista.appendChild(
-            constroiCard(element.dia_evento, element.mes_evento, element.nome_evento, element.data_evento, element.cidade, element.estado)) 
-        });
-
         while(lista.firstChild){
             lista.removeChild(lista.firstChild);
         }
+
+        listaFiltrada.forEach((element) => {
+            lista.appendChild(
+            constroiCard(element.data_evento, element.titulo_evento, element.local_nome, element.cidade, element.estado)) 
+        });
 
     }catch (error){
         lista.innerHTML = `<h2 class="mensagem__titulo">Não foi possível carregar a lista de Eventos</h2> ${error}`;
@@ -51,4 +50,4 @@ async function buscaEvento(){
 
 // }
 
-Pesquisar.addEventListener("click", evento => buscaEvento());
+Pesquisar.addEventListener("click", evento => buscaEvento(document.getElementById('termoBusca').value));
