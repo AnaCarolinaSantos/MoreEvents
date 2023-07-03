@@ -50,4 +50,4 @@ async function buscaEvento(termoBusca){
 
 // }
 
-Pesquisar.addEventListener("click", evento => buscaEvento(document.getElementById('termoBusca').value));
+Pesquisar.addEventListener("click", evento => buscaEvento(document.getElementById('termoBusca').value.toLowerCase()));
