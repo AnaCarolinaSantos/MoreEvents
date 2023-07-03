@@ -7,17 +7,29 @@ async function listaEvento() {
     return conexaoConvertida;
 }
 
-async function criaEvento(titulo, descricao, url, imagem) {
+async function criaEvento(nomeEvento, dataEvento, hora, local, classificacao, tipoEvento, cep, estado, cidade, endereco, bairro, numero, localCoberto, estacionamento, descricao) {
     const conexao = await fetch("http://localhost:3000/evento", {
-        method: "POST",
+        method: "post",
         headers: {
-            "Content-type": "application/json"
+            "Content-type": "application/json",
         },
         body: JSON.stringify({
-            // titulo: titulo,
-            // descricao: `${descricao} mil visualizações`,
-            // url: url,
-            // imagem: imagem
+            titulo_evento: `${nomeEvento}`,
+            tipo_evento: `${tipoEvento}`,
+            local_nome: `${local}`,
+            descricao: `${descricao}`,
+            cep: `${cep}`,
+            estado: `${estado}`,
+            endereco: `${endereco}`,
+            cidade: `${cidade}`,
+            bairro: `${bairro}`,
+            numero: `${numero}`,
+            data_evento: `${dataEvento}`,
+            hora_abertura: `${hora}`,
+            local_coberto: `${localCoberto}`,
+            estacionamento: `${estacionamento}`,
+            faixa_etaria: `${classificacao}`,
+            localizacao: `${local}`
         })
     });
 
@@ -25,9 +37,7 @@ async function criaEvento(titulo, descricao, url, imagem) {
         throw new Error("Não foi possível criar o evento, tente mais tarde!");
     }
 
-    const conexaoConvertida = await conexao.json();
-
-    return conexaoConvertida;
+    return true;
 }
 
 async function buscaEvento(id) {
@@ -41,7 +51,7 @@ async function buscaEvento(id) {
 //  Funcoes referente ao cadastro de usuario na plataforma 
 
 async function criaCliente(nome, nascimento, cpf, contato, cep, estado, 
-    cidade, endereco, bairro, numero, complemento, email, senha) {
+    cidade, endereco, bairro, numero, email, senha) {
     
     const conexao = await fetch("http://localhost:3000/usuario", {
         method: "post",
@@ -56,10 +66,10 @@ async function criaCliente(nome, nascimento, cpf, contato, cep, estado,
             cep:`${cep}`,
             estado:`${estado}`,
             cidade:`${cidade}`,
-             endereco:`${endereco}`,
-             bairro:`${bairro}`,
+            endereco:`${endereco}`,
+            bairro:`${bairro}`,
             numero: `${numero}`,
-            complemento:`${complemento}`,
+            // complemento:`${complemento}`,
             email:`${email}`,
             senha:`${senha}`
         })

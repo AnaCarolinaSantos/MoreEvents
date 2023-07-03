@@ -323,6 +323,7 @@ text-decoration: none;
     margin: 2rem 2rem 0 2rem;
 }
 
+.formulario__usuarios,
 .formulario__ {
     border-radius: 5px;
     margin: 25px;
@@ -344,7 +345,24 @@ text-decoration: none;
     font-size: 24px;
 }
 
-.formulario__, .formulario__evento form {
+.tipo__evento {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.tipo__evento h3{
+    display: flex;
+    align-items: start;
+    margin: 25px 25px 25px 0;
+}
+
+.tipo__evento select{
+    margin: 25px 0 0 0;
+}
+
+.formulario__usuarios form,
+.formulario__, .formulario__evento {
     display: flex;
     justify-content:space-evenly;
 }
@@ -359,6 +377,7 @@ text-decoration: none;
     margin-left: 10px;
 }
 
+.formulario__usuarios input,
 .formulario__ input, .formulario__evento input {
     width: 450px;
     height: 45px;
@@ -442,10 +461,16 @@ text-decoration: none;
     display: flex;
 }
 
+.formulario__usuarios h3,
 .formulario__linha a, .formulario__ h3, .formulario__evento h3 {
     text-decoration: none;
     color: var(--purpple);
     align-self: end;
+}
+#cadastro_cliente {
+    display: flex;
+    width: 915px;
+    justify-content: space-between !important;
 }
 
 #formulario__buttons {

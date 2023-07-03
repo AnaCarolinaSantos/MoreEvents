@@ -24,7 +24,6 @@ class EventoController {
     let evento = new eventos(req.body);
 
     evento.save((err) => {
-
       if(err) {
         res.status(500).send({message: `${err.message} - falha ao cadastrar evento.`})
       } else {
