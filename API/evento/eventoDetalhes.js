@@ -74,11 +74,13 @@ return;
 
 }
 
-async function eventoDetalhado(id){
-    try{       
-        const eventosDetalhadoApi = await conectaApi.buscaEvento('649f7372516eb5ec9def92bd');
-        eventosDetalhadoApi.forEach(
-            element => evento.appendChild(
+async function eventoDetalhado() {
+    try {       
+        const eventosDetalhadoApi = await conectaApi.listaEvento();
+        let listaFiltrada = eventosDetalhadoApi.filter(v => v.titulo_evento.includes('Coldplay'));
+
+        listaFiltrada.forEach((element) => {
+            constroiEvento(
                 element.titulo_evento, 
                 element.local_nome, 
                 element.endereco, 
@@ -92,12 +94,12 @@ async function eventoDetalhado(id){
                 element.hora_abertura, 
                 element.estacionamento, 
                 element.descricao
-            ));
-    }catch (error){
+            );
+        });
+
+    } catch (error) {
         evento.innerHTML = `<h2 class="mensagem__titulo">Não foi possível carregar a lista de Eventos</h2> ${error}`;
     }
 }
-
-
 
 eventoDetalhado();

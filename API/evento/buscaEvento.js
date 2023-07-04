@@ -14,8 +14,13 @@ async function buscaEvento(termoBusca){
         }
 
         listaFiltrada.forEach((element) => {
-            lista.appendChild(
-            constroiCard(element.data_evento, element.titulo_evento, element.local_nome, element.cidade, element.estado)) 
+            lista.appendChild(constroiCard(
+                element.data_evento, 
+                element.titulo_evento, 
+                element.local_nome, 
+                element.cidade, 
+                element.estado
+            )); 
         });
 
     }catch (error){
