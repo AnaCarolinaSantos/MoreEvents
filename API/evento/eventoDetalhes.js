@@ -1,6 +1,7 @@
 import { conectaApi } from "../conectaApi.js";
 
 const evento = document.querySelector("[data-evento-detalhado]");
+const ingresso = document.getElementById("ingressos");
 
 export default function constroiEvento(titulo_evento, local_nome, endereco, estado, cidade, bairro, numero, data_evento, local_coberto, faixa_etaria, hora_abertura, estacionamento, descricao){
     
@@ -53,20 +54,20 @@ export default function constroiEvento(titulo_evento, local_nome, endereco, esta
     
     </div>
 
-    <div>
-        <h3 class="obrigatoriedade">Ingressos selecionados</h3>
-        <ul>
-            <li>Nenhum ingresso selecionado</li>
-        </ul>
-    </div>
-
 </div>
 <div class="informacoes__adicionais">
     <p>${titulo_evento}</p>
     <p>${descricao}</p>
 </div>
+
 </li>`
-    
+
+ingresso.innerHTML = `
+<h3 class="obrigatoriedade">Ingressos selecionados</h3>
+<ul>
+    <li>Nenhum ingresso selecionado</li>
+</ul>`
+
 return;
 
 }
@@ -98,6 +99,31 @@ async function eventoDetalhado(id) {
         evento.innerHTML = `<h2 class="mensagem__titulo">Não foi possível carregar a lista de Eventos</h2> ${error}`;
     }
 }
+
+function carrinho(evento){
+    ingresso.innerHTML = `
+    <h3 class="obrigatoriedade">Ingressos selecionados</h3>
+    <ul>
+        <li>${(evento)=>{
+            evento.forEach(evento => {
+
+            })}
+        }}</li>
+    </ul>`
+
+    return;
+}
+
+function controiCompraIngresso() {
+    
+
+
+}
+
+
+
+
+
 
 if (window.location.href.split("?")) {
     const url = window.location.href.split("?")[0];

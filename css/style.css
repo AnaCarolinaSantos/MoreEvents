@@ -509,6 +509,10 @@ input[type=submit] {
     background-color: var(--purpple) !important;
 }
 
+#ingressos {
+    margin-left: 55px;
+}
+
 .classificacao__evento {
     background: var(--all-black);
     color: var(--white);
