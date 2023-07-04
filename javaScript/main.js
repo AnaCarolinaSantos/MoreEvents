@@ -49,26 +49,14 @@ function sucessoCadastro() {
 
 // Função para construir o inicio pagina de eventos 
 
-let tipoEvento;
-
-function constroiHeader(evento) {
-    console.log(evento);
-    window.location = `src/eventos.html?${evento}`
-    console.log(evento);
-
-    // let headerEvento = () =>{
-    //     document.getElementById("tituloEvento").innerHTML = `${evento}`
-    // }
-    // headerEvento;
-}
-
-
 function headerEvento(tipoEvento) {
     document.getElementById("tituloEvento").innerHTML = `${tipoEvento}`;
 }
 
 if (window.location.href.split("?")) {
-    const valor = window.location.href.split("?")[1]
+    const url = window.location.href.split("?")[0];
+    const valor = window.location.href.split("?")[1];
 
     headerEvento(valor);
+
 }

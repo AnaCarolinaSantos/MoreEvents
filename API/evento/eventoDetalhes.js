@@ -14,21 +14,19 @@ export default function constroiEvento(titulo_evento, local_nome, endereco, esta
     console.log(ano);
     let data = `${dia}/${("0" + (dataCompleta.getMonth() + 1)).slice(-2)}/${ano}`;
 
-    const cabecalhoEvento = document.createElement("div");
-    cabecalhoEvento.className = "categoria__pesquisa";
-    cabecalhoEvento.innerHTML = `
+    const cabecalhoEvento = document.getElementById("infoEvento");
+    cabecalhoEvento.innerHTML = `<div class="categoria__pesquisa" >
     <span>
         <h3 class="obrigatoriedade">${titulo_evento}</h3>
         <h5>${local_nome}</h5>
     </span>
 
     <a id="input__ingresso" type="button" class="btn btn-primary" id="button__modal" data-bs-toggle="modal"
-    data-bs-target="#modal__ingresso">Selecionar Ingressos</a>`
+    data-bs-target="#modal__ingresso">Selecionar Ingressos</a>
+    </div>
     
-    const eventoDetalhamentoSession = document.createElement("li");
-
-    eventoDetalhamentoSession.className = "categoria__pesquisa";
-    eventoDetalhamentoSession.innerHTML = `<div>
+    <li class="categoria__pesquisa">
+<div>
     <div>
         <img class="img__detalhamento__evento" src="../img/Eventos - Baladas/Fluxo1.jpeg" alt="">
     
@@ -62,24 +60,23 @@ export default function constroiEvento(titulo_evento, local_nome, endereco, esta
         </ul>
     </div>
 
-</div>`
-
-eventoDetalhamentoSession.innerHTML = `<div class="informacoes__adicionais">
+</div>
+<div class="informacoes__adicionais">
     <p>${titulo_evento}</p>
     <p>${descricao}</p>
-
-</div>`
+</div>
+</li>`
     
 return;
 
 }
 
-async function eventoDetalhado() {
+async function eventoDetalhado(id) {
     try {       
         const eventosDetalhadoApi = await conectaApi.listaEvento();
-        let listaFiltrada = eventosDetalhadoApi.filter(v => v.titulo_evento.includes('Coldplay'));
+        let listaFiltrada = eventosDetalhadoApi.filter(v => v._id.includes(`${id}`));
 
-        listaFiltrada.forEach((element) => {
+        listaFiltrada.forEach(element => {
             constroiEvento(
                 element.titulo_evento, 
                 element.local_nome, 
@@ -102,4 +99,11 @@ async function eventoDetalhado() {
     }
 }
 
-eventoDetalhado();
+if (window.location.href.split("?")) {
+    const url = window.location.href.split("?")[0];
+    const idEvento = window.location.href.split("?")[1];
+
+    eventoDetalhado(idEvento);
+}
+
+

@@ -15,6 +15,7 @@ async function buscaEvento(termoBusca){
 
         listaFiltrada.forEach((element) => {
             lista.appendChild(constroiCard(
+                element._id,
                 element.data_evento, 
                 element.titulo_evento, 
                 element.local_nome, 
@@ -27,32 +28,5 @@ async function buscaEvento(termoBusca){
         lista.innerHTML = `<h2 class="mensagem__titulo">Não foi possível carregar a lista de Eventos</h2> ${error}`;
     }
 }
-
-// Abaixo modelo para comparar e verificar metodos -----------------
-
-// async function buscaEvento(evento){
-//     evento.preventDefault;
-
-//     const termoBusca = document.querySelector("[data-termo]").value;
-//     const busca = await conectaApi.listaEvento();
-
-//     const lista = document.querySelector("[data-eventos]");
-    
-//     while(lista.firstChild){
-//         lista.removeChild(lista.firstChild);
-//     }
-
-//     busca.forEach(element => {
-//         if(element.titulo_evento == termoBusca){
-//            lista.appendChild(
-//         constroiCard(element.dia_evento, element.mes_evento, element.nome_evento, element.data_evento, element.cidade, element.estado)) 
-//         }
-//     });
-    
-//     if(busca.length == 0) {
-//         lista.innerHTML = `<h2 class="mensagem__titulo">Não existem EventobuscaEvento com esse termo!</h2>`;
-//     }
-
-// }
 
 Pesquisar.addEventListener("click", evento => buscaEvento(document.getElementById('termoBusca').value.toLowerCase()));
