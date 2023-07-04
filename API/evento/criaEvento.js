@@ -31,6 +31,7 @@ async function criaEvento(evento){
     try{    
         await conectaApi.criaEvento(nomeEvento, dataEvento, hora, local, classificacao, tipoEvento, cep, estado, cidade, endereco, bairro, numero, localCoberto, estacionamento, descricao);
 
+        
         location.href = "../../index.html";
     }catch(e){
         alert(e);       
@@ -39,11 +40,11 @@ async function criaEvento(evento){
 }
 
 EventoTipo.addEventListener("focusout", () => {
-    EventoTipo = String(EventoTipo.value);
+    EventoTipo = EventoTipo.value;
 })
 
-faixaEtariaGeral.addEventListener("focusout", () => {
-    faixaEtariaGeral = String(faixaEtariaGeral.value);
+faixaEtariaGeral.addEventListener("change", () => {
+    faixaEtariaGeral = faixaEtariaGeral.value;
 })
 
 formulario.addEventListener("submit", evento => criaEvento(evento));
