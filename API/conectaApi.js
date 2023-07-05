@@ -88,6 +88,7 @@ async function listarIngressos() {
 
     return conexaoConvertida;
 }
+
 async function listarUsuarios() {
     const conexao = await fetch("http://localhost:3000/usuario", () => { mode: 'no-cors'} );
     const conexaoConvertida = await conexao.json();
@@ -96,10 +97,6 @@ async function listarUsuarios() {
 }
 
 // Funções referente evento detalhados
-
-
-
-
 
 
 export const conectaApi = {
