@@ -2,32 +2,28 @@ import { conectaApi } from "../conectaApi.js";
 
 const evento = document.querySelector("[data-evento-detalhado]");
 const ingresso = document.getElementById("ingressos");
+let idEvento;
 
-export default function constroiEvento(titulo_evento, local_nome, endereco, estado, cidade, bairro, numero, data_evento, local_coberto, faixa_etaria, hora_abertura, estacionamento, descricao){
+export default function constroiEvento(id, titulo_evento, local_nome, endereco, estado, cidade, bairro, numero, data_evento, local_coberto, faixa_etaria, hora_abertura, estacionamento, descricao){
     
     const monName = new Array ("Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez");
     
     let dataCompleta = new Date(data_evento);
-    console.log(dataCompleta)
     let dia = dataCompleta.getDay();
     let mes = monName[dataCompleta.getMonth()];
     let ano = dataCompleta.getFullYear();
-    console.log(ano);
     let data = `${dia}/${("0" + (dataCompleta.getMonth() + 1)).slice(-2)}/${ano}`;
 
-    const cabecalhoEvento = document.getElementById("infoEvento");
-    cabecalhoEvento.innerHTML = `<div class="categoria__pesquisa" >
-    <span>
-        <h3 class="obrigatoriedade">${titulo_evento}</h3>
-        <h5>${local_nome}</h5>
-    </span>
-
-    <a id="input__ingresso" type="button" class="btn btn-primary" id="button__modal" data-bs-toggle="modal"
-    data-bs-target="#modal__ingresso">Selecionar Ingressos</a>
-    </div>
+    const titulo = document.getElementById("titulo_evento")
+    const lugar = document.getElementById("lugar_evento")
     
-    <li class="categoria__pesquisa">
-<div>
+    titulo.innerHTML = `${titulo_evento}`;
+    lugar.innerHTML = `${local_nome}`;
+    
+
+    const cabecalhoEvento = document.getElementById("teste");
+    cabecalhoEvento.innerHTML = `
+    <div>
     <div>
         <img class="img__detalhamento__evento" src="../img/Eventos - Baladas/Fluxo1.jpeg" alt="">
     
@@ -56,18 +52,15 @@ export default function constroiEvento(titulo_evento, local_nome, endereco, esta
 
 </div>
 <div class="informacoes__adicionais">
-    <p>${titulo_evento}</p>
     <p>${descricao}</p>
-</div>
-
-</li>`
+</div>`
 
 ingresso.innerHTML = `
 <h3 class="obrigatoriedade">Ingressos selecionados</h3>
 <ul>
-    <li>Nenhum ingresso selecionado</li>
+    <li id="situacaoIngressos">Nenhum ingresso selecionado</li>
 </ul>`
-
+modal = document.getElementById("input__ingresso");
 return;
 
 }
@@ -79,6 +72,7 @@ async function eventoDetalhado(id) {
 
         listaFiltrada.forEach(element => {
             constroiEvento(
+                element._id,
                 element.titulo_evento, 
                 element.local_nome, 
                 element.endereco, 
@@ -100,36 +94,89 @@ async function eventoDetalhado(id) {
     }
 }
 
-function carrinho(evento){
-    ingresso.innerHTML = `
-    <h3 class="obrigatoriedade">Ingressos selecionados</h3>
-    <ul>
-        <li>${(evento)=>{
-            evento.forEach(evento => {
 
-            })}
-        }}</li>
-    </ul>`
-
-    return;
-}
-
-function controiCompraIngresso() {
+function constroiCompraIngresso(id, tipoIngresso, valorIngresso, quantidade, taxaIngresso, id_evento) {
+    const ingresso = document.getElementById("tipoIngressos")
     
+    ingresso.innerHTML = `
+    <div class="form-floating mb-3 form__ingresso">
+        <span class="ingresso__ticket">
+            <img src="../img/icon/ticket.png" alt="">
+            <span>
+                <h3>${tipoIngresso}</h3>
+                <p>Ingresso: R$ ${valorIngresso}</p>
+                <p>Taxa de conveniência: R$ ${taxaIngresso}</p>
+            </span>
+        </span>
 
+        <span class="quantidade__ingressos">
+            <h5>R$ ${valorIngresso + taxaIngresso}</h5>
+            
+            <span class="quantidade__ingressos">
+                <button class="circulo" data-controle="-">-</button>
+                <input type="text" class="controle__contador" value="0" data-contador disabled>
+                <button class="circulo" data-controle="+">+</button>
+            </span>
+        </span>
 
+    </div>`
 }
 
 
+async function buscaIngressos() {
+    try {      
+        console.log(idEvento);
+        const ingressosDetalhadoApi = await conectaApi.listarIngressos();
+        let listaFiltrada = ingressosDetalhadoApi.filter(v => v.id_evento.includes(`${idEvento}`));
 
+        listaFiltrada.forEach(element => () => {
+            constroiCompraIngresso(
+                element._id,
+                element.nome_tipo, 
+                element.valor, 
+                element.quantidade, 
+                element.taxa, 
+                element.id_evento
+            );
+        });
 
+    } catch (error) {
+        evento.innerHTML = `<h2 class="mensagem__titulo">Não foi possível carregar a lista de Ingressos</h2> ${error}`;
+    }
+}
+
+const modal = document.getElementById("input__ingresso");
+modal.addEventListener("click", buscaIngressos())
 
 
 if (window.location.href.split("?")) {
     const url = window.location.href.split("?")[0];
-    const idEvento = window.location.href.split("?")[1];
-
+    idEvento = window.location.href.split("?")[1];
+    buscaIngressos(idEvento);
     eventoDetalhado(idEvento);
 }
 
+function selecionaIngresso(){
+    let ingresso = ["Inteira", "Estudante", "Idoso / Demais Benef."]
+    let quantidade = document.querySelectorAll("[data-contador]").values
+    let situacaoCompra = document.getElementById("situacaoIngressos");
 
+
+    situacaoCompra.innerHTML = `${quantidade[0]}`
+
+
+
+
+}
+
+
+
+// async function listaUsuarios(){
+//     try{
+//         const listaUsuarioApi = await conectaApi.listarUsuarios();
+//         let listaFiltrada = listaUsuarioApi .filter(v => v.email.includes(`${email}`));
+//         listaFiltrada.forEach(element => {logar(element.email, element.senha)})
+//     }catch (error){
+//         alert(`Não foi possível carregar a lista de usuários</h2> ${error}`);
+//     }
+// }

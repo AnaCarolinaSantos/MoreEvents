@@ -1,31 +1,36 @@
 import { conectaApi } from "../conectaApi.js";
 
-let Email = document.getElementById('floatingInput').value;
 let Senha = document.getElementById('floatingPassword').value;
-let usuarioAutenticado = false;
 
-async function logar(email, senha) {
+function logar(email, senha) {
 
-    if (email == "admin@admin.com" && senha == 'Admin.321') {
+    let usuarioAutenticado = false;
+    
+    if (Email == "admin@admin.com" && Senha == 'Admin.321') {
         usuarioAutenticado = true;
+        preventDefault();
+        alert("Seja bem-vindo ADM!");
+
         location.href = "../../src/cadastro-evento.html";
-    } else if (email == Email && senha == Senha) {
+    } else if (Email == "user@user.com" && Senha == "123456") {
         usuarioAutenticado = true;
+        alert("Seja bem-vindo!")
+        
         location.href = "../../index.html";
     } else {
         alert('Usuário ou senha incorretos!');
+        preventDefault();
     }
-
-    return usuarioAutenticado;
 }
 
-async function listaUsuarios(){
+async function listarUsuarios(){
     try{
+        let Email = document.getElementById('floatingInput').value; 
 
         const listaUsuarioApi = await conectaApi.listarUsuarios();
-        let listaFiltrada = listaUsuarioApi.filter(v => v.email.includes(`${email}`));
+        let listaFiltrada = listaUsuarioApi.filter(v => v.email.includes(`${Email}`));
 
-        listaFiltrada.forEach(element => {
+        listaFiltrada.forEach(element => ()=>{
             logar(element.email, element.senha)
         });
 
@@ -33,3 +38,8 @@ async function listaUsuarios(){
         alert(`Não foi possível carregar a lista de usuários</h2> ${error}`);
     }
 }
+
+
+
+const login = document.getElementById("button__login");
+// login.addEventListener("click", evento => listarUsuarios());

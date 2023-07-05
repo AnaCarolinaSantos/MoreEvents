@@ -35,7 +35,9 @@ function sucessoCadastro() {
 // Função para construir o inicio pagina de eventos 
 
 function headerEvento(tipoEvento) {
-    document.getElementById("tituloEvento").innerHTML = `${tipoEvento}`;
+
+    let tipo = document.getElementById("tituloEvento");
+    tipo.innerHTML = `${tipoEvento}`;
 }
 
 if (window.location.href.split("?")) {

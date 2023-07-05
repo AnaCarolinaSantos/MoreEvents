@@ -3,8 +3,8 @@ import eventos from "../modelos/Evento.js";
 class EventoController {
 
   static listarEventos = (req, res) => {
-      eventos.find((err, eventos) => {
-        res.status(200).json(eventos)
+    eventos.find((err, eventos) => {
+      res.status(200).json(eventos)
     })
   }
 
